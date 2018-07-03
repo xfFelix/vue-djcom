@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>电精科技</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="wap-font-scale" content="no">
+    <!-- <script src="http://api.map.baidu.com/api?v=1.5&ak=piXQ5CgHFqEefqCVbhhBFfe6HjF7l4zW"></script> -->
+    <script type="text/javascript">
+      //适屏处理函数
+      function winResize (){
+        //设置scale值
+        // var scale = 1 / devicePixelRatio;
+        // document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale=' + scale + ', maximum-scale=' + scale + ',minimum-scale=' + scale + ', user-scalable=no');
+
+        //设置htmlfont-size值，即设置rem
+         var hhxhWindowWidth = (document.documentElement.clientWidth < 480) ? document.documentElement.clientWidth : 480;
+        document.documentElement.style.fontSize = (hhxhWindowWidth / 75) * 10 + 'px';
+      }
+      //初始化适屏
+      winResize();
+
+      //横屏与竖屏切换视屏
+      window.addEventListener('resize',winResize);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+    document.body.addEventListener('click', function (event){
+      var target = event.target
+      if((target.nodeName == 'INPUT') && target.readOnly){
+        document.activeElement.blur()
+      }
+    })
+  </script>
+</html>
